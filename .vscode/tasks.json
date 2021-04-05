@@ -1,19 +1,19 @@
 {
     "tasks": [
         {
-            "type": "cppbuild",
+            "type": "shell",
             "label": "C/C++: g++.exe build active file",
             "command": "C:\\MinGW\\bin\\g++.exe",
             "args": [
                 "-g",
                 "-std=c++17",
-                "-I../include",
-                "-L../lib",
-                "src/Main.cpp",
-                "src/glad.c",
+                "-I${workspaceFolder}/include",
+                "-L${workspaceFolder}/lib",
+                "${workspaceFolder}/src/Main.cpp",
+                "${workspaceFolder}/src/glad.c",
+                "-lglfw3dll",
                 "-o",
-                "../build/Caro.exe",
-                "-lglfw3dll"
+                "${workspaceFolder}/build/CreateWindow.exe"
             ],
             "options": {
                 "cwd": "C:\\MinGW\\bin"

@@ -8,7 +8,7 @@
             "name": "g++.exe - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}\\build\\Caro.exe",
+            "program": "${workspaceFolder}\\build\\CreateWindow.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "C:\\MinGW\\bin",
@@ -22,6 +22,7 @@
                     "ignoreFailures": true
                 }
             ],
+            "preLaunchTask": "${defaultBuildTask}"
         }
     ]
 }
