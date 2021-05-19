@@ -16,8 +16,8 @@ Firstly, please ensure that your Visual Studio Code had been installed the `C/C+
 
 1. Open VS Code and choose <b>Extension</b> on the side menu.
 
-   ![image-20210517142551029](https://github.com/Threona-Kannard/OpenGL-template/tree/main/img/image-20210517142551029.png)
-
+   ![image-20210517142551029](https://user-images.githubusercontent.com/66297538/118797279-9f43fb00-b8c6-11eb-89d8-6fa0865bebc0.png)
+   
 2. Search the name "C/C++" and download the first one.
 
    ![image-20210517142738574](https://github.com/Threona-Kannard/OpenGL-template/tree/main/img/image-20210517142738574.png)
