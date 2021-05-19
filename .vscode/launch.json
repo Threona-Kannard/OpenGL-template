@@ -8,13 +8,13 @@
             "name": "g++.exe - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}\\build\\CreateWindow.exe",
+            "program": "${workspaceFolder}\\build\\{YourProgramName}.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin",
+            "cwd": "{The path to MinGW/bin}",
             "environment": [],
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "{The path to gdb.exe in MinGW/bin}",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",

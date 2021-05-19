@@ -3,7 +3,7 @@
         {
             "type": "shell",
             "label": "C/C++: g++.exe build active file",
-            "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
+            "command": "{The path to g++.exe in MinGW/bin}",
             "args": [
                 "-g",
                 "-std=c++17",
@@ -14,10 +14,10 @@
                 "${workspaceFolder}/include/source/*.cpp",
                 "-lglfw3dll",
                 "-o",
-                "${workspaceFolder}/build/CreateWindow.exe"
+                "${workspaceFolder}/build/{yourProgramName}.exe"
             ],
             "options": {
-                "cwd": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin"
+                "cwd": "{The path to MinGW/bin}"
             },
             "problemMatcher": [
                 "$gcc"

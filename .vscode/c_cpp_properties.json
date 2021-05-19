@@ -10,7 +10,7 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
+            "compilerPath": "{The path to gcc.exe in MinGW/bin}",
             "cStandard": "gnu11",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "gcc-x64"

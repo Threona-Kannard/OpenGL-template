@@ -14,7 +14,7 @@ using namespace std;
 int main()
 {
     GLFWwindow *window;
-    string address = "D:\\Johan\\Code\\Template\\OpenGL-template\\src\\";
+    string address = "{path to your shader}";
 
     init();
 
