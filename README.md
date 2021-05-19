@@ -16,25 +16,25 @@ Firstly, please ensure that your Visual Studio Code had been installed the `C/C+
 
 1. Open VS Code and choose <b>Extension</b> on the side menu.
 
-   ![image-20210517142551029](C:\Users\phatt\AppData\Roaming\Typora\typora-user-images\image-20210517142551029.png)
+   ![image-20210517142551029](.\img\image-20210517142551029.png)
 
 2. Search the name "C/C++" and download the first one.
 
-   ![image-20210517142738574](C:\Users\phatt\AppData\Roaming\Typora\typora-user-images\image-20210517142738574.png)
+   ![image-20210517142738574](.\img\image-20210517142738574.png)
 
    <b><u>Note:</u></b> Visual Studio Code provide a lot of extensions to make your coding more comfortable. See them  <a href="https://blog.logrocket.com/top-10-vs-code-extensions-2021/#importcost">here</a>.
 
 Next, you must download a C++ compiler to compile code on Visual Studio Code. In this document, I use MinGW x64 (download <a href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/" target="_blank">here</a>):
 
-![MinGW](D:\Johan\MinGW.png)
+![MinGW](.\img\MinGW.png)
 
 Then you download my source code in this git repository.
 
 And the folder will be like this
 
-![image-20210517142340943](C:\Users\phatt\AppData\Roaming\Typora\typora-user-images\image-20210517142340943.png)
+![image-20210517142340943](.\img\image-20210517142340943.png)
 
-Open folder <b>.vscode</b> and add the path to your `MinGW-x64/bin`  into 3 files
+Open folder <b>.vscode</b> and add the path to your `MinGW-x64/bin`  and `yourProgramName` into 3 files
 
 > * launch.json
 > * tasks.json
@@ -42,15 +42,21 @@ Open folder <b>.vscode</b> and add the path to your `MinGW-x64/bin`  into 3 file
 
 ##### 1. launch.json
 
-<img src="D:\Johan\Screenshot 2021-05-18 114054.png" alt="Screenshot 2021-05-18 114054" style="zoom:75%;" />
+![Screenshot 2021-05-18 114054](.\img\Screenshot 2021-05-18 114054.png)
 
 ##### 2. tasks.json
 
-![Screenshot 2021-05-18 114524](D:\Johan\Screenshot 2021-05-18 114524.png)
+![Screenshot 2021-05-18 114524](.\img\Screenshot 2021-05-18 114524.png)
 
 ##### 3. c_cpp_properties
 
-![Screenshot 2021-05-18 114758](D:\Johan\Screenshot 2021-05-18 114758.png)
+![Screenshot 2021-05-18 114758](.\img\Screenshot 2021-05-18 114758.png)
+
+Then you enter the path to your shader source into `Main.cpp`
+
+![image-20210519165556087](.\img\image-20210519165556087.png)
+
+<u>Example:</u> `{path of your disk}\\\OpenGL-template\\\src`
 
 <h3 style="text-align:left"><b>Config build</b></h3>
 
@@ -146,7 +152,7 @@ I. Create your breakpoint by two ways :
 
 1. Click on the red circle on the left of row number.
 
-![image-20210519161142784](C:\Users\phatt\AppData\Roaming\Typora\typora-user-images\image-20210519161142784.png)
+![image-20210519161142784](.\img\image-20210519161142784.png)
 
 2. Choose the row you want to place the breakpoint and press `F9` 
 
@@ -163,7 +169,7 @@ III. Let's debug
 
 Visual Studio Code not only provide us the a area to visualize the `variables` , `stack`, `breakpoint` but also they have a `Debug Console` for us.
 
-![image-20210519161925718](C:\Users\phatt\AppData\Roaming\Typora\typora-user-images\image-20210519161925718.png)
+![image-20210519161925718](.\img\image-20210519161925718.png)
 
 
 
@@ -173,4 +179,3 @@ Visual Studio Code not only provide us the a area to visualize the `variables` ,
     <div><b><u>Contact me</u></b></div>
     <div>Tan Phat Huynh</div>
     <div>phattanhuynh1324@gmail.com</div></h4>
-
