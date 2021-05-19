@@ -16,23 +16,26 @@ Firstly, please ensure that your Visual Studio Code had been installed the `C/C+
 
 1. Open VS Code and choose <b>Extension</b> on the side menu.
 
-   ![image-20210517142551029](https://user-images.githubusercontent.com/66297538/118797279-9f43fb00-b8c6-11eb-89d8-6fa0865bebc0.png)
+   ![Extension](https://user-images.githubusercontent.com/66297538/118797279-9f43fb00-b8c6-11eb-89d8-6fa0865bebc0.png)
    
 2. Search the name "C/C++" and download the first one.
 
-   ![image-20210517142738574](https://github.com/Threona-Kannard/OpenGL-template/tree/main/img/image-20210517142738574.png)
+   ![C++ Extension](https://user-images.githubusercontent.com/66297538/118797363-b682e880-b8c6-11eb-8d2a-cf556c2a0ca8.png)
+
 
    <b><u>Note:</u></b> Visual Studio Code provide a lot of extensions to make your coding more comfortable. See them  <a href="https://blog.logrocket.com/top-10-vs-code-extensions-2021/#importcost">here</a>.
 
 Next, you must download a C++ compiler to compile code on Visual Studio Code. In this document, I use MinGW x64 (download <a href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/" target="_blank">here</a>):
 
-![MinGW](.\img\MinGW.png)
+![MinGW download](https://user-images.githubusercontent.com/66297538/118797421-c4d10480-b8c6-11eb-9a1c-28b22cfdf435.png)
+
 
 Then you download my source code in this git repository.
 
 And the folder will be like this
 
-![image-20210517142340943](.\img\image-20210517142340943.png)
+![folder tree](https://user-images.githubusercontent.com/66297538/118797470-d1555d00-b8c6-11eb-99ca-3daeedb83fa1.png)
+
 
 Open folder <b>.vscode</b> and add the path to your `MinGW-x64/bin`  and `yourProgramName` into 3 files
 
@@ -42,19 +45,22 @@ Open folder <b>.vscode</b> and add the path to your `MinGW-x64/bin`  and `yourPr
 
 ##### 1. launch.json
 
-![Screenshot 2021-05-18 114054](.\img\Screenshot 2021-05-18 114054.png)
+![launch.json](https://user-images.githubusercontent.com/66297538/118797521-e0d4a600-b8c6-11eb-8d44-c1c13208611a.png)
+
 
 ##### 2. tasks.json
 
-![Screenshot 2021-05-18 114524](.\img\Screenshot 2021-05-18 114524.png)
+![tasks.json](https://user-images.githubusercontent.com/66297538/118797557-eaf6a480-b8c6-11eb-8ece-fc08aff90bc4.png)
 
 ##### 3. c_cpp_properties
 
-![Screenshot 2021-05-18 114758](.\img\Screenshot 2021-05-18 114758.png)
+![c_cpp_properties](https://user-images.githubusercontent.com/66297538/118797596-f6e26680-b8c6-11eb-8191-6a764ed0c233.png)
+
 
 Then you enter the path to your shader source into `Main.cpp`
 
-![image-20210519165556087](.\img\image-20210519165556087.png)
+![Shader source path](https://user-images.githubusercontent.com/66297538/118797645-03ff5580-b8c7-11eb-8149-0b49f9331330.png)
+
 
 <u>Example:</u> `{path of your disk}\\\OpenGL-template\\\src`
 
@@ -152,7 +158,8 @@ I. Create your breakpoint by two ways :
 
 1. Click on the red circle on the left of row number.
 
-![image-20210519161142784](.\img\image-20210519161142784.png)
+![Place breakpoint](https://user-images.githubusercontent.com/66297538/118797730-14afcb80-b8c7-11eb-89fe-99d4405dbc4d.png)
+
 
 2. Choose the row you want to place the breakpoint and press `F9` 
 
@@ -169,7 +176,8 @@ III. Let's debug
 
 Visual Studio Code not only provide us the a area to visualize the `variables` , `stack`, `breakpoint` but also they have a `Debug Console` for us.
 
-![image-20210519161925718](.\img\image-20210519161925718.png)
+![Debug](https://user-images.githubusercontent.com/66297538/118797799-209b8d80-b8c7-11eb-8e5b-f58356a878e9.png)
+
 
 
 
