@@ -8,11 +8,35 @@
 > * OpenGL ES 3.2 or below
 > * OpenGL SC 2.0 or below
 
+#### The advantages of this template
+
+**1. A cross-platform template**
+
+​	With this template, you can continue your OpenGL project on any computer without the attention to the Operating System being used. It can run smoothly on Windows, Linux, and macOS with only one time to configure it.
+
+**2. Easy to configure your project**
+
+​	In Visual Studio, you need to do a lot of steps to configure an OpenGL project (You can see the tutorial <a href="http://www.mcihanozer.com/tips/setting-up-libraries/setting-up-glfw-for-visual-studio/">here</a>). To configure your build, you need to do a lot of steps on the Visual Studio GUI. But with this template, you just configure only one file (tasks.json).
+
+**3. Faster than Visual Studio**
+
+​	Due to downloading a lot of redundant extensions and libraries for C/C++, the Visual Studio takes up a lot of hard drive space. 
+
+​	This template just requires you have a C/C++ compiler to build and run. 
+
+**4. Add external libs easier by one step**
+
+​	You just add the link to download the external library (git or url) to `external.json` then run the Python script `getExternal.py`
+
 <h2><b>Tutorial</b></h2>
 
-<h3 style="text-align:left"><b>Repair</b></h3>
 
-Firstly, please ensure that your Visual Studio Code had been installed the `C/C++ Extension` . Following the instruction below if you haven't install it.
+
+<h3 style="text-align:left"><b>A. Prerequisite</b></h3>
+
+<h4>I. C/C++ extension on Visual Code</h4>
+
+Firstly, please ensure that your Visual Studio Code had been installed `C/C++ extension`. Following the instruction below if you haven't installed it.
 
 1. Open VS Code and choose <b>Extension</b> on the side menu.
 
@@ -22,141 +46,79 @@ Firstly, please ensure that your Visual Studio Code had been installed the `C/C+
 
    ![C++ Extension](https://user-images.githubusercontent.com/66297538/118797363-b682e880-b8c6-11eb-8d2a-cf556c2a0ca8.png)
 
+   <b><u>Note:</u></b> Visual Studio Code provides a lot of extensions to make your coding more comfortable. See them  <a href="https://blog.logrocket.com/top-10-vs-code-extensions-2021/#importcost">here</a>.
 
-   <b><u>Note:</u></b> Visual Studio Code provide a lot of extensions to make your coding more comfortable. See them  <a href="https://blog.logrocket.com/top-10-vs-code-extensions-2021/#importcost">here</a>.
+<h4> II. C++ Compiler</h4>
 
-Next, you must download a C++ compiler to compile code on Visual Studio Code. In this document, I use MinGW x64 (download <a href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/" target="_blank">here</a>):
+Next, you must download a C++ compiler to build and debug on Visual Studio Code.
+
+1. **Windows**
+
+ There are a lot of tools and software that provide the C/C++ compiler for Windows like MinGW, Cygwin, ... But in this tutorial, I will use the MinGW x64 (download <a href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/" target="_blank">here</a>):
 
 ![MinGW download](https://user-images.githubusercontent.com/66297538/118797421-c4d10480-b8c6-11eb-9a1c-28b22cfdf435.png)
 
+2. **Linux**
 
-Then you download my source code in this git repository.
+   The GCC has already been installed in Linux. Open the `terminal window` and check its version by entering the following command:
 
-And the folder will be like this
+   > gcc -v
 
-![folder tree](https://user-images.githubusercontent.com/66297538/118797470-d1555d00-b8c6-11eb-99ca-3daeedb83fa1.png)
+   If GCC isn't installed, run the following command from the `terminal window` to Update the Linux package lists. An out-of-date Linux distribution can sometimes interfere with attempts to install new packages.
 
+   > sudo apt-get update
 
-Open folder <b>.vscode</b> and add the path to your `MinGW-x64/bin`  and `yourProgramName` into 3 files
+   Next install the GNU compiler tools and the GDB debugger with this command:
 
-> * launch.json
-> * tasks.json
-> * c_cpp_properties.json
+   > sudo apt-get install build-essential gdb
 
-##### 1. launch.json
+3. **macOS**
 
-![launch.json](https://user-images.githubusercontent.com/66297538/118797521-e0d4a600-b8c6-11eb-8d44-c1c13208611a.png)
+   Clang may already be installed on your Mac. To verify that it is, open a macOS `terminal window` and enter the following command:
 
+   > clang --version
 
-##### 2. tasks.json
+   If Clang isn't installed, enter the following command to install the command line developer tools:
 
-![tasks.json](https://user-images.githubusercontent.com/66297538/118797557-eaf6a480-b8c6-11eb-8ece-fc08aff90bc4.png)
+   > xcode-select --install
 
-##### 3. c_cpp_properties
-
-![c_cpp_properties](https://user-images.githubusercontent.com/66297538/118797596-f6e26680-b8c6-11eb-8191-6a764ed0c233.png)
+<h4>III. Add your shader path</h4>
 
 
-Then you enter the path to your shader source into `Main.cpp`
+You need to enter the path of your shader source into `Main.cpp`
 
 ![Shader source path](https://user-images.githubusercontent.com/66297538/118797645-03ff5580-b8c7-11eb-8149-0b49f9331330.png)
 
+<u>Example:</u> `{path of your disk}/OpenGL-template/src`
 
-<u>Example:</u> `{path of your disk}\\\OpenGL-template\\\src`
+<h4>IV. Add the necessary libraries</h4>
 
-<h3 style="text-align:left"><b>Config build</b></h3>
+Open file `external.json` to add the libraries you want to import into the project with the format:
 
-For configuring the build, let's see through the file **tasks.json**
+- "repo_name" : "{your library name}"
+- "repo_url" : "{your library download link}"
+- "clone_location" : "{your location you want place it in}"
 
-**<u>Note:</u>** Here is the config build for Window only (Linux and MacOS will be updated later)
+Then run the `getExternal.py` to clone all the libraries you need.
 
-```json
-{
-    "tasks": [
-        {
-            "type": "shell",
-            "label": "C/C++: g++.exe build active file",
-            "command": "{The path to g++.exe in MinGW/bin}",
-            "args": [
-                "-g",
-                "-std=c++17",
-                "-I${workspaceFolder}/include",
-                "-L${workspaceFolder}/lib",
-                "${workspaceFolder}/src/Main.cpp",
-                "${workspaceFolder}/src/glad.c",
-                "${workspaceFolder}/include/source/*.cpp",
-                "-lglfw3dll",
-                "-o",
-                "${workspaceFolder}/build/{YourProgramName}.exe"
-            ],
-            "options": {
-                "cwd": "{The path to MinGW/bin}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": "Task generated by Debugger."
-        }
-    ],
-    "version": "2.0.0"
-}
-```
+**<u>Note</u>**: The `getExternal.py` just can download the libraries which have repository on git. To download specific file libraries (dll, other cpp files) will be update later.
 
-<b><u>Brief explanation of keys</u></b>
+<h3 style="text-align:left"><b>B. Build and Debug</b></h3>
 
-* **${workspaceFolder}** :  the folder is openning at workspace mode in Visual Studio Code.
+1. **Build**
 
-* <u>**type**</u> : The task's type. This can either be <b style="color:red">`shell`</b> or <b style="color:red">`process`</b>. If <b style="color:red">`shell`</b> is specified, the command is interpreted as a shell command (ex: bash, cmd or PowerShell). If <b style="color:red">`process`</b> is specified, the command is interpreted as a process to execute (ex: node.exe, npm,...).
+   There are two ways to build:
 
-* **<u>label</u>** : The task's label used in the user interface. It is the same with the task's name.
+   - Press `F5` to build and run the program.
+   - Press `Ctrl+Shift+B` to build only.
 
-* **<u>command</u>** : The actual command to execute.
+2. **Debug**
 
-* **<u>args</u>** : list arguments will be passed into the command.
+You just do the same with Visual Studio.
 
-  * "-g" : g++ will generate debug information to be used by GDB debugger.
+I. Create your breakpoint in two ways :
 
-  * "-std=c++17" : choose the default compiler which support C++17
-
-  * "-I${workspaceFolder}/include" : adding include directory of header files
-
-  * "-L${workspaceFolder}/lib" : adding libraries directory.
-
-  * ["${workspaceFolder}/src/Main.cpp" ,
-
-      "${workspaceFolder}/src/glad.c",
-
-      "${workspaceFolder}/include/source/*.cpp"] : Adding the main file, glad and our code in <u>include/source</u> folder to compile process.
-
-  * "-lglfw3dll" : Link with the glfw3.dll file.
-
-  * "-o" : gcc will generate the compiled object into the file which will define in next argument.
-
-  * "${workspaceFolder}/build/{YourProgramName}.exe" : define where the gernerated file will be placed and the name of it.
-
-* **<u>options</u>** : Override the defaults for `cwd` (current working directory), `env` (environment variables), or `shell` (default shell). Options can be set per task but also globally or per platform. Environment variables configured here can only be referenced from within your task script or process and will not be resolved if they are part of your args, command, or other task attributes.
-
-* **<u>problemMatcher</u>** : add the C++ lint to the compile process.
-
-* **<u>group</u>** : Defines to which group the task belongs.
-
-  <h3 style="text-align:left"><b>Run the code</b></h3>
-
-Before you run, please ensure that you have been added the path to `MinGW/bin` into the file `launch.json`
-
-Then open the file `Main.cpp` and press `F5` to build and run the program.
-
-<h3 style="text-align:left"><b>Debug</b></h3>
-
-You just do at the same with Visual Studio.
-
-I. Create your breakpoint by two ways :
-
-1. Click on the red circle on the left of row number.
+1. Click on the red circle on the left of the row number.
 
 ![Place breakpoint](https://user-images.githubusercontent.com/66297538/118797730-14afcb80-b8c7-11eb-89fe-99d4405dbc4d.png)
 
@@ -174,7 +136,7 @@ III. Let's debug
 * `Ctrl + Shift + F5` : Restart
 * `Shift + F5` : Stop
 
-Visual Studio Code not only provide us the a area to visualize the `variables` , `stack`, `breakpoint` but also they have a `Debug Console` for us.
+Visual Studio Code not only provides us an area to visualize the `variables` , `stack`, `breakpoint` but also they have a `Debug Console` for us.
 
 ![Debug](https://user-images.githubusercontent.com/66297538/118797799-209b8d80-b8c7-11eb-8e5b-f58356a878e9.png)
 
