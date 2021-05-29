@@ -1,0 +1,9 @@
+{
+    "external_lib": [
+        {
+            "repo_name": "glm",
+            "repo_url" : "https://github.com/g-truc/glm.git",
+            "clone_location": "./include/glm"
+        }
+    ]
+}
