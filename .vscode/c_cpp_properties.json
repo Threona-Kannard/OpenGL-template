@@ -10,10 +10,33 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "{The path to gcc.exe in MinGW/bin}",
+            "compilerPath": "${env:MINGW_BIN}/gcc.exe",
             "cStandard": "gnu11",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "gcc-x64"
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        },
+        {
+            "name": "Mac",
+            "includePath": ["${workspaceFolder}/**"],
+            "defines": [],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
         }
     ],
     "version": 4

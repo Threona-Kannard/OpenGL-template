@@ -3,7 +3,15 @@
         {
             "type": "shell",
             "label": "C/C++: g++.exe build active file",
-            "command": "{The path to g++.exe in MinGW/bin}",
+            "windows": {
+                "command": "${env:MINGW_BIN}/g++.exe",
+            },
+            "linux":{
+                "command": "/usr/bin/g++"
+            },
+            "osx":{
+                "command": "/usr/bin/clang++"
+            },
             "args": [
                 "-g",
                 "-std=c++17",
@@ -14,10 +22,10 @@
                 "${workspaceFolder}/include/source/*.cpp",
                 "-lglfw3dll",
                 "-o",
-                "${workspaceFolder}/build/{yourProgramName}.exe"
+                "${workspaceFolder}/build/{YourProgramName}.exe"
             ],
             "options": {
-                "cwd": "{The path to MinGW/bin}"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"
