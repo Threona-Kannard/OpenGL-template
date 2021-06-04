@@ -58,6 +58,21 @@ Next, you must download a C++ compiler to build and debug on Visual Studio Code.
 
 ![MinGW download](https://user-images.githubusercontent.com/66297538/118797421-c4d10480-b8c6-11eb-9a1c-28b22cfdf435.png)
 
+After that you need to create an enviroment variable for MinGW by following the steps below:
+   - Step 1: Find the `env` in the window search bar.
+   
+   ![image](https://user-images.githubusercontent.com/66297538/120768256-24c1df00-c546-11eb-841c-b3e8d504fb0c.png)
+   - Step 2: Choose the `Environment Variables` button.
+
+   ![image](https://user-images.githubusercontent.com/66297538/120768431-58046e00-c546-11eb-813e-043163b11612.png)
+   - Step 3: Click the `New` button like the image.
+
+   ![image](https://user-images.githubusercontent.com/66297538/120768587-83875880-c546-11eb-970a-633766cdfdf7.png)
+   - Step 4: Fill the information like the image then click `OK` and the `Environment` window.
+
+   ![image](https://user-images.githubusercontent.com/66297538/120768738-aade2580-c546-11eb-9d77-96b2d900542c.png)
+
+
 2. **Linux**
 
    The GCC has already been installed in Linux. Open the `terminal window` and check its version by entering the following command:
