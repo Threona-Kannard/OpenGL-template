@@ -114,11 +114,11 @@ After that you need to create an environment variable for MinGW by following the
 
    - launch.json
 
-     
+     ![image](https://user-images.githubusercontent.com/66297538/120979694-0d7e2e00-c7a0-11eb-9ff3-f3c4238aa042.png)
 
    - tasks.json
 
-     
+     ![image](https://user-images.githubusercontent.com/66297538/120979781-225ac180-c7a0-11eb-96e1-ded8246aba61.png)
 
 2. Shader source
 
