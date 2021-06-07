@@ -57,12 +57,17 @@ Next, you must download a C++ compiler to build and debug on Visual Studio Code.
  There are a lot of tools and software that provide the C/C++ compiler for Windows like MinGW, Cygwin, ... But in this tutorial, I will use the MinGW x64 (download <a href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/" target="_blank">here</a>):
 
 ![MinGW download](https://user-images.githubusercontent.com/66297538/118797421-c4d10480-b8c6-11eb-9a1c-28b22cfdf435.png)
+
+- If you use the installer, you need to config the settings like the image below
+
 ![image](https://user-images.githubusercontent.com/66297538/120953780-f592b400-c777-11eb-99ec-952065180966.png)
 
+- If you download the zip file, please choose the `x86_64-posix-seh.zip` 
 
-After that you need to create an enviroment variable for MinGW by following the steps below:
+
+After that you need to create an environment variable for MinGW by following the steps below:
    - Step 1: Find the `env` in the window search bar.
-   
+
    ![image](https://user-images.githubusercontent.com/66297538/120768256-24c1df00-c546-11eb-841c-b3e8d504fb0c.png)
    - Step 2: Choose the `Environment Variables` button.
 
@@ -73,6 +78,8 @@ After that you need to create an enviroment variable for MinGW by following the 
    - Step 4: Fill the information like the image then click `OK` and the `Environment` window.
 
    ![image](https://user-images.githubusercontent.com/66297538/120768738-aade2580-c546-11eb-9d77-96b2d900542c.png)
+
+- Step 5: Please reset your computer to ensure that Windows can update the `Environment variables`.
 
 
 2. **Linux**
@@ -99,14 +106,29 @@ After that you need to create an enviroment variable for MinGW by following the 
 
    > xcode-select --install
 
-<h4>III. Add your shader path</h4>
+<h4>III. Add your Program name and your shader path</h4>
 
+1. Program name
+
+   You need to enter your ProgramName into 2 files (look the image below):
+
+   - launch.json
+
+     
+
+   - tasks.json
+
+     
+
+2. Shader source
 
 You need to enter the path of your shader source into `Main.cpp`
 
 ![Shader source path](https://user-images.githubusercontent.com/66297538/118797645-03ff5580-b8c7-11eb-8149-0b49f9331330.png)
 
-<u>Example:</u> `{path of your disk}/OpenGL-template/src`
+<u>Example:</u> `{path of your disk}/OpenGL-template/src/`
+
+**Note:** you need to ensure that the end of the shader path is `/` .
 
 <h4>IV. Add the necessary libraries</h4>
 
