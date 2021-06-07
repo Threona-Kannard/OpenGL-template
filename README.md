@@ -57,6 +57,8 @@ Next, you must download a C++ compiler to build and debug on Visual Studio Code.
  There are a lot of tools and software that provide the C/C++ compiler for Windows like MinGW, Cygwin, ... But in this tutorial, I will use the MinGW x64 (download <a href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/" target="_blank">here</a>):
 
 ![MinGW download](https://user-images.githubusercontent.com/66297538/118797421-c4d10480-b8c6-11eb-9a1c-28b22cfdf435.png)
+![image](https://user-images.githubusercontent.com/66297538/120953780-f592b400-c777-11eb-99ec-952065180966.png)
+
 
 After that you need to create an enviroment variable for MinGW by following the steps below:
    - Step 1: Find the `env` in the window search bar.
