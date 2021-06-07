@@ -132,7 +132,13 @@ You need to enter the path of your shader source into `Main.cpp`
 
 <h4>IV. Add the necessary libraries</h4>
 
-Open file `external.json` to add the libraries you want to import into the project with the format:
+Firstly, you need to ensure that your computer was already installed Python 3 and pip.
+
+Secondly, you need to install some python modules. Open the `cmd` then enter the command lines below:
+
+> pip install gitpython tqdm
+
+Then open file `external.json` to add the libraries you want to import into the project with the format:
 
 - "repo_name" : "{your library name}"
 - "repo_url" : "{your library download link}"
