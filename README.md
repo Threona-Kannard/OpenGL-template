@@ -179,4 +179,4 @@ Visual Studio Code not only provides us an area to visualize the `variables` , `
 <h4 style="text-align:center; font-family:time New Roman">
     <div><b><u>Contact me</u></b></div>
     <div>Tan Phat Huynh</div>
-    <div>phattanhuynh1324@gmail.com</div></h4>
+    <div>threonahuynh.contact@gmail.com</div></h4>
