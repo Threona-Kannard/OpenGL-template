@@ -1,5 +1,3 @@
-import tool.gitUtils as git
-from colorama import Fore
 import tool.pythonCheck as pc
 import os
 import sys
@@ -30,6 +28,8 @@ for module, module_name in required_module.items():
             f"Module {module} has been installed!!!")
     print('-----------------------------------------------------')
 
+import tool.gitUtils as git
+from colorama import Fore
 
 # Read the file contain external repo
 file = Path("./external.json")
@@ -47,9 +47,10 @@ for lib in data["external_lib"]:
     repo_name = lib["repo_name"]
     repo_url = lib["repo_url"]
     clone_location = lib["clone_location"]
+    clone_branch = lib["clone_branch"]
     if os.path.isdir(clone_location):
         print(Fore.MAGENTA +
               f"The folder {repo_name} has been existed" + Fore.RESET)
     else:
-        git.clone_repo(repo_name, repo_url, clone_location)
+        git.clone_repo(repo_name, repo_url, clone_location, clone_branch)
 print('-----------------------------------------------------')

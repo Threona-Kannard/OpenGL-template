@@ -17,11 +17,11 @@ class CloneProgress(RemoteProgress):
         self.pbar.refresh()
 
 
-def clone_repo(repo_name, repo_url, location):
+def clone_repo(repo_name, repo_url, location, clone_branch = 'development'):
     print('-----------------------------------------------------')
     print(Fore.CYAN+'Starting clone ' + repo_name)
     try:
-        Repo.clone_from(repo_url, location, branch='development', progress=CloneProgress())
+        Repo.clone_from(repo_url, location, branch=clone_branch, progress=CloneProgress())
         print('Done!'+Fore.WHITE)
     except git.GitError as e:
         print(Fore.RED)

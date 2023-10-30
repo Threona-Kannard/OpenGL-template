@@ -3,7 +3,8 @@
         {
             "repo_name": "glm",
             "repo_url" : "https://github.com/g-truc/glm.git",
-            "clone_location": "./include/glm"
+            "clone_location": "./include/glm",
+            "clone_branch": "0.9.9.8"
         }
     ]
 }
