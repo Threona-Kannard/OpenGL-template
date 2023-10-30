@@ -58,6 +58,30 @@ Next, you must download a C++ compiler to build and debug on Visual Studio Code.
 
 ![MinGW download](https://user-images.githubusercontent.com/66297538/118797421-c4d10480-b8c6-11eb-9a1c-28b22cfdf435.png)
 
+- If you use the installer, you need to config the settings like the image below
+
+![image](https://user-images.githubusercontent.com/66297538/120953780-f592b400-c777-11eb-99ec-952065180966.png)
+
+- If you download the zip file, please choose the `x86_64-posix-seh.zip` 
+
+
+After that you need to create an environment variable for MinGW by following the steps below:
+   - Step 1: Find the `env` in the window search bar.
+
+   ![image](https://user-images.githubusercontent.com/66297538/120768256-24c1df00-c546-11eb-841c-b3e8d504fb0c.png)
+   - Step 2: Choose the `Environment Variables` button.
+
+   ![image](https://user-images.githubusercontent.com/66297538/120768431-58046e00-c546-11eb-813e-043163b11612.png)
+   - Step 3: Click the `New` button like the image.
+
+   ![image](https://user-images.githubusercontent.com/66297538/120768587-83875880-c546-11eb-970a-633766cdfdf7.png)
+   - Step 4: Fill the information like the image then click `OK` and the `Environment` window.
+
+   ![image](https://user-images.githubusercontent.com/66297538/120768738-aade2580-c546-11eb-9d77-96b2d900542c.png)
+
+- Step 5: Please restart your computer to ensure that Windows can update the `Environment variables`.
+
+
 2. **Linux**
 
    The GCC has already been installed in Linux. Open the `terminal window` and check its version by entering the following command:
@@ -82,18 +106,25 @@ Next, you must download a C++ compiler to build and debug on Visual Studio Code.
 
    > xcode-select --install
 
-<h4>III. Add your shader path</h4>
+<h4>III. Add your Program name and your shader path</h4>
 
+1. Program name
 
-You need to enter the path of your shader source into `Main.cpp`
+   You need to enter your ProgramName into 2 files (look the image below):
 
-![Shader source path](https://user-images.githubusercontent.com/66297538/118797645-03ff5580-b8c7-11eb-8149-0b49f9331330.png)
+   - launch.json
 
-<u>Example:</u> `{path of your disk}/OpenGL-template/src`
+     ![image](https://user-images.githubusercontent.com/66297538/120979694-0d7e2e00-c7a0-11eb-9ff3-f3c4238aa042.png)
+
+   - tasks.json
+
+     ![image](https://user-images.githubusercontent.com/66297538/120979781-225ac180-c7a0-11eb-96e1-ded8246aba61.png)
 
 <h4>IV. Add the necessary libraries</h4>
 
-Open file `external.json` to add the libraries you want to import into the project with the format:
+Firstly, you need to ensure that your computer was already installed Python 3 and pip.
+
+Then open file `external.json` to add the libraries you want to import into the project with the format:
 
 - "repo_name" : "{your library name}"
 - "repo_url" : "{your library download link}"
@@ -148,4 +179,4 @@ Visual Studio Code not only provides us an area to visualize the `variables` , `
 <h4 style="text-align:center; font-family:time New Roman">
     <div><b><u>Contact me</u></b></div>
     <div>Tan Phat Huynh</div>
-    <div>phattanhuynh1324@gmail.com</div></h4>
+    <div>threonahuynh.contact@gmail.com</div></h4>

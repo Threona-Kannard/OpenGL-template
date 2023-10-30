@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string.h>
+#include <unistd.h>
 
 #include <header/constantList.h>
 #include <header/appUtils.h>
@@ -11,10 +12,21 @@
 
 using namespace std;
 
-int main()
+int main(int argc, char** argv)
 {
     GLFWwindow *window;
-    string address = "{path to your shader}";
+    
+    char cwd[PATH_MAX];
+    string address;
+    if(getcwd(cwd, sizeof(cwd)) != NULL)
+    {
+        address = cwd;
+    }
+    else
+    {
+        perror("getcwd() error");
+        return 1;
+    }
 
     init();
 
@@ -33,9 +45,9 @@ int main()
         return -1;
     }
     
-    string vertexString = address + "vertex.shader";
+    string vertexString = address + "\\src\\shader\\vertex.shader";
     const char *vertexPath = vertexString.c_str();
-    string fragmentString = address + "fragment.shader";
+    string fragmentString = address + "\\src\\shader\\fragment.shader";
     const char *fragmentPath = fragmentString.c_str();
     // build and compile our shader program
     // ------------------------------------

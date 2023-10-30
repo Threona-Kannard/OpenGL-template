@@ -1,2 +1,4 @@
 *.exe
 img
+__pycache__
+include/glm
